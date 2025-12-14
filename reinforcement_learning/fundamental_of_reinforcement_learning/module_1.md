@@ -8,7 +8,7 @@ Definition - Agent choses K different action and received an award for each acti
 
 # Action values:
 
-<img src="images/image-1.png" width="400">
+<img src="images/image-1.png" width="600">
 
 q*(A) - The true action value 
 
@@ -24,7 +24,7 @@ NOTE:
 
 ### Method 1 - Sample average method 
 
-<img src="images/image.png" width="400">
+<img src="images/image.png" width="600">
 
 It is the ratio of the sum of rewards when action is taken and the number of actions taken. (average)
 
@@ -32,15 +32,15 @@ The rewards can be any numerical representation, but often negative is penalty a
 
 Example - A doctor creates a table with rewards whenever a patient feels better with a treatment. 
 
-<img src="images/image-2.png" width="400">
+<img src="images/image-2.png" width="600">
 
 The greedy action is the action with the highest value of the action value estimate. The agent cannot explore (investigate non greedy actions) and exploit (investigate only the greedy action) at the same time, which is a typical problem in reinforcement learning. 
 
-<img src="images/image-3.png" width="400">
+<img src="images/image-3.png" width="600">
 
 ### Method 2 - Incremental update (page 53)
 
-<img src="images/image-5.png" width="400">
+<img src="images/image-5.png" width="600">
 
 Q - Estimate of the action value  
 R - Rewards
@@ -58,7 +58,7 @@ The step size affects the convergence towards the mean. There are 2 methods to s
 It is possible to decay the old rewards based on the distribution of the rewards (ex - when a treatment works better in winter). When step size is constant and closer to 1, then the recent reward have higher weight. 
 
 Pseudocode:  
-<img src="images/image-6.png" width="400">
+<img src="images/image-6.png" width="600">
 
 # Exploration vs exploitation
 
@@ -89,17 +89,17 @@ $$\%\text{ Optimal Action}_t = \frac{\sum_{m=1}^{M} O_t^{(m)}}{M} \times 100$$
 
 ## Method 1 - Epsilon greedy
 
-<img src="images/image-7.png" width="400">
+<img src="images/image-7.png" width="600">
 
 A simple method to balance exploit and explore. 
 
 The effectiveness of this method can be determined by using 10 armed test bed for different values of epsilon:
 
-<img src="images/image-8.png" width="400">
+<img src="images/image-8.png" width="600">
 
 ## Method 2 - Optimistic initial values
 
-<img src="images/image-9.png" width="400">
+<img src="images/image-9.png" width="600">
 
 The idea is to explore at the initial time steps and exploit at later timesteps. 
 
@@ -111,7 +111,7 @@ Limitation:
 
 The use of exploration in epsilon greedy is very random. A better way to approach this problem is to use uncertainty of the estimate of action value. The idea is to treat uncertain estimates are "optimistically good" and explore the corresponding action. The action selection can be done using the formula:
 
-$$A_t = \underset{A}{\operatorname{argmax}} \left[ \underbrace{Q_t(A)}_{\text{Exploitation Term}} + \underbrace{c \sqrt{\frac{\ln t}{N_t(A)}}}_{\text{Exploration Term}} \right]$$
+$$A_t = \underset{A}{argmax} \left[ \underbrace{Q_t(A)}_{\text{Exploitation Term}} + \underbrace{c \sqrt{\frac{\ln t}{N_t(A)}}}_{\text{Exploration Term}} \right]$$
 
 For a given timestep, perform the action that maximizes the sum of exploitation (current estimate) and exploration (uncertainty).
 
@@ -119,17 +119,17 @@ The exploration term or the uncertainty checks how much times the action is pref
 
 $$\text{Uncertainty} = c \sqrt{\frac{\ln (\text{Total Time Steps } t)}{\text{Tota number times an action A is performed previously}}}$$
 
-<img src="images/image-10.png" width="400">
+<img src="images/image-10.png" width="600">
 
 UCB performs better than epsilon greedy after 100 steps. UCB reduces exploration over time but epsilon greedy has a 10% prob of exploring. 
 
 # Real world reinforcement learning
 
-<img src="images/image-11.png" width="400">
+<img src="images/image-11.png" width="600">
 
 # Summary
 
-<img src="images/summary.png" width="400">
+<img src="images/summary.png" width="600">
 
 
 
