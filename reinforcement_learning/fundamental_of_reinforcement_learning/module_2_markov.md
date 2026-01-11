@@ -36,12 +36,13 @@ Continuing task are the tasks that have no final position (Ex - Automatic thermo
 
 $$G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$$
 
-where 10 $0 \leq \gamma \leq 1$ 
+where $0 \leq \gamma \leq 1$. The idea is to give higher weightage to recent reward.
 
 ## Reward hypothesis
 
 <img src="images/image-15.png" width="600">
 
+Reward hypothesis states that the MDP should maximize the total cumulative rewards (or return).
 
 
 
